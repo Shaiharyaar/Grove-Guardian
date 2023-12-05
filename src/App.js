@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Button, ConfigProvider } from 'antd'
+import './App.css'
+import AppContainer from './modules/common/Containers/Main'
+import { useApp } from './app/hooks/useApp'
+import Navigation from './app/route'
 function App() {
+  const { themeConfig, toggleTheme } = useApp()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {/* Theme Config will be added here */}
+      <ConfigProvider theme={themeConfig}>
+        <AppContainer>
+          <Button type={'primary'} onClick={toggleTheme}>
+            {'Click me to switch theme'}
+          </Button>
+          <Navigation />
+        </AppContainer>
+      </ConfigProvider>
+    </>
+  )
 }
 
-export default App;
+export default App
