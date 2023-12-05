@@ -1,7 +1,7 @@
-import { ThemeConfig } from 'antd'
+// import { ThemeConfig } from 'antd'
 import { colors, darkContainer, darkText, lightContainer, lightText } from './colors'
 
-export const lightTheme: ThemeConfig = {
+export const lightTheme = {
   token: {
     colorPrimary: colors.primary,
     colorFillSecondary: colors.secondary,
@@ -10,7 +10,7 @@ export const lightTheme: ThemeConfig = {
   },
 }
 
-export const darkTheme: ThemeConfig = {
+export const darkTheme = {
   token: {
     colorPrimary: colors.primary,
     colorFillSecondary: colors.secondary,
