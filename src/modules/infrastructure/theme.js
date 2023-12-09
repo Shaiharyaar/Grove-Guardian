@@ -7,6 +7,7 @@ export const lightTheme = {
     colorFillSecondary: colors.secondary,
     colorPrimaryBg: lightContainer.primary,
     colorText: lightText.primary,
+    fontFamily: "Inter"
   },
 }
 
@@ -16,5 +17,6 @@ export const darkTheme = {
     colorFillSecondary: colors.secondary,
     colorPrimaryBg: darkContainer.primary,
     colorText: darkText.primary,
+    fontFamily: "Inter"
   },
 }
