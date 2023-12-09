@@ -29,12 +29,11 @@ const HomePage = () => {
 
   return (
     <>
-    <div style={{width: "100%", backgroundColor: "#F1F2EE", display: "flex", gap: 30, justifyContent: "center", alignItems: "center",  flexDirection: "row", height: 60, borderBottomWidth: 2, borderBottomColor: "#000"}}>
-      <a style={{fontSize: 18}}href='/profile'>Profile</a>
-      <a href='/statistics'>Statistics</a>
-      <a href='/add-contribution'>My Contributions</a>
-      <a href='/faq'>FAQ</a>
-      {/* <a */}
+    <div style={{width: "100%", backgroundColor: "#F1F2EE", display: "flex", gap: 50, justifyContent: "flex-end",  alignItems: "center",  flexDirection: "row", height: 60}}>
+      <a style={{fontSize: 18, fontWeight: 500}} href='/profile'>Profile</a>
+      <a style={{fontSize: 18, fontWeight: 500}} href='/statistics'>Statistics</a>
+      <a style={{fontSize: 18, fontWeight: 500}} href='/add-contribution'>My Contributions</a>
+      <a style={{fontSize: 18, fontWeight: 500, marginRight: 100}} href='/faq'>FAQ</a>
     </div>
     <div style={{height: 2, widoth: "100%", backgroundColor: "black"}}></div>
     <div style={{position: "fixed",paddingLeft: 100, backgroundColor: "rgba(0;0;0;0)", paddingRight: 100, paddingTop: 20, zIndex: 900, top: 62, width: "100%"}}>
