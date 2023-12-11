@@ -6,6 +6,7 @@ import { OrbitControls } from '@react-three/drei'
 import { useGLTF } from '@react-three/drei'
 import { useMask, useAnimations, Float, Instance, Instances, MeshTransmissionMaterial, CameraControls } from '@react-three/drei'
 import { Lightformer, Environment, RandomizedLight, AccumulativeShadows } from '@react-three/drei'
+import Header from '../../../modules/common/Header'
 
 
 
@@ -29,15 +30,9 @@ const HomePage = () => {
 
   return (
     <>
-    <div style={{width: "100%", backgroundColor: "#F1F2EE", display: "flex", gap: 50, justifyContent: "flex-end",  alignItems: "center",  flexDirection: "row", height: 60}}>
-      <a style={{fontSize: 18, fontWeight: 500}} href='/profile'>Profile</a>
-      <a style={{fontSize: 18, fontWeight: 500}} href='/statistics'>Statistics</a>
-      <a style={{fontSize: 18, fontWeight: 500}} href='/add-contribution'>My Contributions</a>
-      <a style={{fontSize: 18, fontWeight: 500, marginRight: 100}} href='/faq'>FAQ</a>
-    </div>
-    <div style={{height: 2, widoth: "100%", backgroundColor: "black"}}></div>
-    <div style={{position: "fixed",paddingLeft: 100, backgroundColor: "rgba(0;0;0;0)", paddingRight: 100, paddingTop: 20, zIndex: 900, top: 62, width: "100%"}}>
-      <Title style={{color: "#133A37", fontSize: "70px", marginBottom: -10}} >Together we have planted</Title>
+    <Header/>
+    <div style={{position: "fixed",paddingLeft: 100, backgroundColor: "rgba(0;0;0;0)", paddingRight: 100, paddingTop: 10, zIndex: 900, top: 62, width: "100%"}}>
+      <Title style={{color: "#133A37", fontSize: "70px", marginBottom: -30}} >Together we have planted</Title>
       <Title style={{color: "#133A37", fontSize: "40px"}}>700,400,200 Trees</Title>
     </div>
     
