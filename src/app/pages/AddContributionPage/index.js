@@ -1,14 +1,63 @@
-import React from 'react'
+
+import React, { useState } from 'react';
 import { Typography } from 'antd'
+import Header from '../../../modules/common/Header';
+import StepIndicator from '../../../modules/StepIndicator';
+import TreeInfoForm from '../../../modules/TreeInfoForm';
+import PhotoUploadForm from '../../../modules/PhotoUploadForm';
+import NoteForm from '../../../modules/NoteForm';
+import './style.css';
+
 
 const AddContributionPage = () => {
   const { Title, Text } = Typography
+  const [currentStep, setCurrentStep] = useState(1);
+  const [treeInfo, setTreeInfo] = useState({
+    country: '',
+    date: '',
+    species: '',
+    number: 0,
+  });
+  const [photos, setPhotos] = useState([]);
+  const [note, setNote] = useState('');
+
+  const handleTreeInfoSubmit = (info) => {
+    setTreeInfo(info);
+    setCurrentStep(2);
+  };
+
+  const handlePhotoUpload = (newPhotos) => {
+    setPhotos(newPhotos);
+    setCurrentStep(3);
+  };
+
+  const handleNoteSubmit = (newNote) => {
+    setNote(newNote);
+    // This would be the final step - submit all data (treeInfo, photos, note) to backend
+    console.log(treeInfo, photos, note);
+    // You can handle the final submission here
+  };
+
   return (
-    <>
-      <Title>Add Contribution Page</Title>
-      <Text>This is your Add Contribution page</Text>
-    </>
-  )
-}
+    <div className="contributionSec">
+      <Header />
+      <div className="container">
+
+        <div className="introContri">
+          <Title className="contriTitle">Share Your Tree-planting Record</Title>
+          <Text className="contriText">With just a few simple steps, you can share the joy of planting trees with the entire world and document your contributions to environmental sustainability. Share the delight of tree-planting and record your commitment to a sustainable future.</Text>
+        </div>
+        <div className="contriForm">
+          <StepIndicator currentStep={currentStep} />
+          {currentStep === 1 && <TreeInfoForm onSubmit={handleTreeInfoSubmit} />}
+          {currentStep === 2 && <PhotoUploadForm onNext={handlePhotoUpload} />}
+          {currentStep === 3 && <NoteForm onNext={handleNoteSubmit} />}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
 
 export default AddContributionPage

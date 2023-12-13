@@ -1,0 +1,108 @@
+.contributionSec{
+    background-image: url(../../../images/contributionBg-min.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+}
+.contriTitle{
+    color: white !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    font-size: 3rem !important;
+    padding-top: 0.8rem;
+}
+.contriText{
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+}
+
+.container{
+    width: 90vw;
+    max-width: 920px;
+    margin: auto;
+    padding-top: 2rem;
+    display: flex;
+}
+.introContri{
+    width: 40%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.contriForm{
+    width: 54%;
+    height: 80vh;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 4% 20% 4% 4%;
+}
+.contriFormContent{
+    width: 80%;
+    margin: auto;
+    display: block;
+    /* outline: red solid; */
+    margin-top: 1%;
+}
+.stepIndicator{
+    margin-top: 5%;
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+.stepIndicatorImg{
+    margin-top: 10%;
+    display: block;
+}
+.stepTitle{
+    font-size: 1.8rem;
+    color: #386641;
+    width: 80%;
+    margin: auto;
+    margin-top: 1%;
+}
+.stepIntro{
+    width: 80%;
+    margin: auto;
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+    margin-top: 1%;
+    color: #386641;
+    font-weight: 600;
+}
+.stepImg{
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    /* outline: red solid; */
+}
+.stepImg1{
+    background-image: url(../../../images/step1.png);
+    background-size: contain;
+    height: 3rem;
+    background-repeat: no-repeat;
+}
+.selection{
+    height: 1.9rem;
+    margin-top: 1%;
+}
+.inputName{
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+    margin-right: 1.5%;
+}
+.selectionSubmit{
+    width: 40%;
+    height: 50px;
+    margin: auto;
+    margin-top: 5%;
+    background-color: #386641;
+    color: #FFB628;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: block;      /* 使按鈕作為塊級元素 */
+    margin-left: auto;   /* 自動邊距將按鈕推向右側 */
+    margin-right: 0; 
+}
