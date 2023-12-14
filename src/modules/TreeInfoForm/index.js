@@ -1,4 +1,21 @@
 import React, { useState } from 'react';
+import {
+  Button,
+  Cascader,
+  Checkbox,
+  ColorPicker,
+  DatePicker,
+  Form,
+  Input,
+  InputNumber,
+  Radio,
+  Select,
+  Slider,
+  Switch,
+  TreeSelect,
+  Upload,
+} from 'antd';
+
 
 const TreeInfoForm = ({ onSubmit }) => {
   const [treeInfo, setTreeInfo] = useState({
@@ -22,280 +39,280 @@ const TreeInfoForm = ({ onSubmit }) => {
       <h2 className="stepTitle">Planting Basic Information</h2>
       <p className="stepIntro">Please select the planting country, choose the variety (if there are different varieties, you can fill them out in batches), and select or enter the quantity of trees to be planted.</p>
       <form className="contriFormContent" onSubmit={() => onSubmit(treeInfo)}>
-        <div>
-        <p className="inputName">Planting Country : </p> 
-          
-          <select className="selection" name="country" onChange={handleChange}>
-            <option value="">Select a country</option>
-            <option value="afghanistan">Afghanistan</option>
-            <option value="albania">Albania</option>
-            <option value="algeria">Algeria</option>
-            <option value="andorra">Andorra</option>
-            <option value="angola">Angola</option>
-            <option value="antigua_and_barbuda">Antigua and Barbuda</option>
-            <option value="argentina">Argentina</option>
-            <option value="armenia">Armenia</option>
-            <option value="australia">Australia</option>
-            <option value="austria">Austria</option>
-            <option value="azerbaijan">Azerbaijan</option>
-            <option value="bahamas">Bahamas</option>
-            <option value="bahrain">Bahrain</option>
-            <option value="bangladesh">Bangladesh</option>
-            <option value="barbados">Barbados</option>
-            <option value="belarus">Belarus</option>
-            <option value="belgium">Belgium</option>
-            <option value="belize">Belize</option>
-            <option value="benin">Benin</option>
-            <option value="bhutan">Bhutan</option>
-            <option value="bolivia">Bolivia</option>
-            <option value="bosnia_and_herzegovina">Bosnia and Herzegovina</option>
-            <option value="botswana">Botswana</option>
-            <option value="brazil">Brazil</option>
-            <option value="brunei">Brunei</option>
-            <option value="bulgaria">Bulgaria</option>
-            <option value="burkina_faso">Burkina Faso</option>
-            <option value="burundi">Burundi</option>
-            <option value="cabo_verde">Cabo Verde</option>
-            <option value="cambodia">Cambodia</option>
-            <option value="cameroon">Cameroon</option>
-            <option value="canada">Canada</option>
-            <option value="central_african_republic">Central African Republic</option>
-            <option value="chad">Chad</option>
-            <option value="chile">Chile</option>
-            <option value="china">China</option>
-            <option value="colombia">Colombia</option>
-            <option value="comoros">Comoros</option>
-            <option value="congo_democratic_republic_of_the">Congo, Democratic Republic of the</option>
-            <option value="congo_republic_of_the">Congo, Republic of the</option>
-            <option value="costa_rica">Costa Rica</option>
-            <option value="cote_divoire">Côte d'Ivoire</option>
-            <option value="croatia">Croatia</option>
-            <option value="cuba">Cuba</option>
-            <option value="cyprus">Cyprus</option>
-            <option value="czech_republic">Czech Republic</option>
-            <option value="denmark">Denmark</option>
-            <option value="djibouti">Djibouti</option>
-            <option value="dominica">Dominica</option>
-            <option value="dominican_republic">Dominican Republic</option>
-            <option value="ecuador">Ecuador</option>
-            <option value="egypt">Egypt</option>
-            <option value="el_salvador">El Salvador</option>
-            <option value="equatorial_guinea">Equatorial Guinea</option>
-            <option value="eritrea">Eritrea</option>
-            <option value="estonia">Estonia</option>
-            <option value="eswatini">Eswatini</option>
-            <option value="ethiopia">Ethiopia</option>
-            <option value="fiji">Fiji</option>
-            <option value="finland">Finland</option>
-            <option value="france">France</option>
-            <option value="gabon">Gabon</option>
-            <option value="gambia">Gambia</option>
-            <option value="georgia">Georgia</option>
-            <option value="germany">Germany</option>
-            <option value="ghana">Ghana</option>
-            <option value="greece">Greece</option>
-            <option value="grenada">Grenada</option>
-            <option value="guatemala">Guatemala</option>
-            <option value="guinea">Guinea</option>
-            <option value="guinea_bissau">Guinea-Bissau</option>
-            <option value="guyana">Guyana</option>
-            <option value="haiti">Haiti</option>
-            <option value="honduras">Honduras</option>
-            <option value="hungary">Hungary</option>
-            <option value="iceland">Iceland</option>
-            <option value="india">India</option>
-            <option value="indonesia">Indonesia</option>
-            <option value="iran">Iran</option>
-            <option value="iraq">Iraq</option>
-            <option value="ireland">Ireland</option>
-            <option value="israel">Israel</option>
-            <option value="italy">Italy</option>
-            <option value="jamaica">Jamaica</option>
-            <option value="japan">Japan</option>
-            <option value="jordan">Jordan</option>
-            <option value="kazakhstan">Kazakhstan</option>
-            <option value="kenya">Kenya</option>
-            <option value="kiribati">Kiribati</option>
-            <option value="korea_north">Korea, North</option>
-            <option value="korea_south">Korea, South</option>
-            <option value="kuwait">Kuwait</option>
-            <option value="kyrgyzstan">Kyrgyzstan</option>
-            <option value="laos">Laos</option>
-            <option value="latvia">Latvia</option>
-            <option value="lebanon">Lebanon</option>
-            <option value="lesotho">Lesotho</option>
-            <option value="liberia">Liberia</option>
-            <option value="libya">Libya</option>
-            <option value="liechtenstein">Liechtenstein</option>
-            <option value="lithuania">Lithuania</option>
-            <option value="luxembourg">Luxembourg</option>
-            <option value="madagascar">Madagascar</option>
-            <option value="malawi">Malawi</option>
-            <option value="malaysia">Malaysia</option>
-            <option value="maldives">Maldives</option>
-            <option value="mali">Mali</option>
-            <option value="malta">Malta</option>
-            <option value="marshall_islands">Marshall Islands</option>
-            <option value="mauritania">Mauritania</option>
-            <option value="mauritius">Mauritius</option>
-            <option value="mexico">Mexico</option>
-            <option value="micronesia">Micronesia</option>
-            <option value="moldova">Moldova</option>
-            <option value="monaco">Monaco</option>
-            <option value="mongolia">Mongolia</option>
-            <option value="montenegro">Montenegro</option>
-            <option value="morocco">Morocco</option>
-            <option value="mozambique">Mozambique</option>
-            <option value="myanmar">Myanmar</option>
-            <option value="namibia">Namibia</option>
-            <option value="nauru">Nauru</option>
-            <option value="nepal">Nepal</option>
-            <option value="netherlands">Netherlands</option>
-            <option value="new_zealand">New Zealand</option>
-            <option value="nicaragua">Nicaragua</option>
-            <option value="niger">Niger</option>
-            <option value="nigeria">Nigeria</option>
-            <option value="north_macedonia">North Macedonia</option>
-            <option value="norway">Norway</option>
-            <option value="oman">Oman</option>
-            <option value="pakistan">Pakistan</option>
-            <option value="palau">Palau</option>
-            <option value="panama">Panama</option>
-            <option value="papua_new_guinea">Papua New Guinea</option>
-            <option value="paraguay">Paraguay</option>
-            <option value="peru">Peru</option>
-            <option value="philippines">Philippines</option>
-            <option value="poland">Poland</option>
-            <option value="portugal">Portugal</option>
-            <option value="qatar">Qatar</option>
-            <option value="romania">Romania</option>
-            <option value="russia">Russia</option>
-            <option value="rwanda">Rwanda</option>
-            <option value="saint_kitts_and_nevis">Saint Kitts and Nevis</option>
-            <option value="saint_lucia">Saint Lucia</option>
-            <option value="saint_vincent_and_the_grenadines">Saint Vincent and the Grenadines</option>
-            <option value="samoa">Samoa</option>
-            <option value="san_marino">San Marino</option>
-            <option value="sao_tome_and_principe">Sao Tome and Principe</option>
-            <option value="saudi_arabia">Saudi Arabia</option>
-            <option value="senegal">Senegal</option>
-            <option value="serbia">Serbia</option>
-            <option value="seychelles">Seychelles</option>
-            <option value="sierra_leone">Sierra Leone</option>
-            <option value="singapore">Singapore</option>
-            <option value="slovakia">Slovakia</option>
-            <option value="slovenia">Slovenia</option>
-            <option value="solomon-islands">Solomon Islands</option>
-            <option value="somalia">Somalia</option>
-            <option value="south-africa">South Africa</option>
-            <option value="south-korea">South Korea</option>
-            <option value="south-sudan">South Sudan</option>
-            <option value="spain">Spain</option>
-            <option value="sri-lanka">Sri Lanka</option>
-            <option value="sudan">Sudan</option>
-            <option value="suriname">Suriname</option>
-            <option value="svalbard-jan-mayen">Svalbard and Jan Mayen</option>
-            <option value="swaziland">Swaziland</option>
-            <option value="sweden">Sweden</option>
-            <option value="switzerland">Switzerland</option>
-            <option value="syria">Syria</option>
-            <option value="taiwan">Taiwan</option>
-            <option value="tajikistan">Tajikistan</option>
-            <option value="tanzania">Tanzania</option>
-            <option value="thailand">Thailand</option>
-            <option value="timor-leste">Timor-Leste</option>
-            <option value="togo">Togo</option>
-            <option value="tokelau">Tokelau</option>
-            <option value="tonga">Tonga</option>
-            <option value="trinidad-tobago">Trinidad and Tobago</option>
-            <option value="tunisia">Tunisia</option>
-            <option value="turkey">Turkey</option>
-            <option value="turkmenistan">Turkmenistan</option>
-            <option value="turks-caicos-islands">Turks and Caicos Islands</option>
-            <option value="tuvalu">Tuvalu</option>
-            <option value="uganda">Uganda</option>
-            <option value="ukraine">Ukraine</option>
-            <option value="united-arab-emirates">United Arab Emirates</option>
-            <option value="united-kingdom">United Kingdom</option>
-            <option value="united-states">United States</option>
-            <option value="us-minor-outlying-islands">U.S. Minor Outlying Islands</option>
-            <option value="uruguay">Uruguay</option>
-            <option value="uzbekistan">Uzbekistan</option>
-            <option value="vanuatu">Vanuatu</option>
-            <option value="vatican-city">Vatican City</option>
-            <option value="venezuela">Venezuela</option>
-            <option value="vietnam">Vietnam</option>
-            <option value="virgin-islands-british">British Virgin Islands</option>
-            <option value="virgin-islands-us">U.S. Virgin Islands</option>
-            <option value="wallis-futuna">Wallis and Futuna</option>
-            <option value="western-sahara">Western Sahara</option>
-            <option value="yemen">Yemen</option>
-            <option value="zambia">Zambia</option>
-            <option value="zimbabwe">Zimbabwe</option>
+        
+        <Form.Item label="Planting Country ">
+        <Select placeholder="Select a country">
+            <Select.Option value="afghanistan">Afghanistan</Select.Option>
+            <Select.Option value="albania">Albania</Select.Option>
+            <Select.Option value="algeria">Algeria</Select.Option>
+            <Select.Option value="andorra">Andorra</Select.Option>
+            <Select.Option value="angola">Angola</Select.Option>
+            <Select.Option value="antigua_and_barbuda">Antigua and Barbuda</Select.Option>
+            <Select.Option value="argentina">Argentina</Select.Option>
+            <Select.Option value="armenia">Armenia</Select.Option>
+            <Select.Option value="australia">Australia</Select.Option>
+            <Select.Option value="austria">Austria</Select.Option>
+            <Select.Option value="azerbaijan">Azerbaijan</Select.Option>
+            <Select.Option value="bahamas">Bahamas</Select.Option>
+            <Select.Option value="bahrain">Bahrain</Select.Option>
+            <Select.Option value="bangladesh">Bangladesh</Select.Option>
+            <Select.Option value="barbados">Barbados</Select.Option>
+            <Select.Option value="belarus">Belarus</Select.Option>
+            <Select.Option value="belgium">Belgium</Select.Option>
+            <Select.Option value="belize">Belize</Select.Option>
+            <Select.Option value="benin">Benin</Select.Option>
+            <Select.Option value="bhutan">Bhutan</Select.Option>
+            <Select.Option value="bolivia">Bolivia</Select.Option>
+            <Select.Option value="bosnia_and_herzegovina">Bosnia and Herzegovina</Select.Option>
+            <Select.Option value="botswana">Botswana</Select.Option>
+            <Select.Option value="brazil">Brazil</Select.Option>
+            <Select.Option value="brunei">Brunei</Select.Option>
+            <Select.Option value="bulgaria">Bulgaria</Select.Option>
+            <Select.Option value="burkina_faso">Burkina Faso</Select.Option>
+            <Select.Option value="burundi">Burundi</Select.Option>
+            <Select.Option value="cabo_verde">Cabo Verde</Select.Option>
+            <Select.Option value="cambodia">Cambodia</Select.Option>
+            <Select.Option value="cameroon">Cameroon</Select.Option>
+            <Select.Option value="canada">Canada</Select.Option>
+            <Select.Option value="central_african_republic">Central African Republic</Select.Option>
+            <Select.Option value="chad">Chad</Select.Option>
+            <Select.Option value="chile">Chile</Select.Option>
+            <Select.Option value="china">China</Select.Option>
+            <Select.Option value="colombia">Colombia</Select.Option>
+            <Select.Option value="comoros">Comoros</Select.Option>
+            <Select.Option value="congo_democratic_republic_of_the">Congo, Democratic Republic of the</Select.Option>
+            <Select.Option value="congo_republic_of_the">Congo, Republic of the</Select.Option>
+            <Select.Option value="costa_rica">Costa Rica</Select.Option>
+            <Select.Option value="cote_divoire">Côte d'Ivoire</Select.Option>
+            <Select.Option value="croatia">Croatia</Select.Option>
+            <Select.Option value="cuba">Cuba</Select.Option>
+            <Select.Option value="cyprus">Cyprus</Select.Option>
+            <Select.Option value="czech_republic">Czech Republic</Select.Option>
+            <Select.Option value="denmark">Denmark</Select.Option>
+            <Select.Option value="djibouti">Djibouti</Select.Option>
+            <Select.Option value="dominica">Dominica</Select.Option>
+            <Select.Option value="dominican_republic">Dominican Republic</Select.Option>
+            <Select.Option value="ecuador">Ecuador</Select.Option>
+            <Select.Option value="egypt">Egypt</Select.Option>
+            <Select.Option value="el_salvador">El Salvador</Select.Option>
+            <Select.Option value="equatorial_guinea">Equatorial Guinea</Select.Option>
+            <Select.Option value="eritrea">Eritrea</Select.Option>
+            <Select.Option value="estonia">Estonia</Select.Option>
+            <Select.Option value="eswatini">Eswatini</Select.Option>
+            <Select.Option value="ethiopia">Ethiopia</Select.Option>
+            <Select.Option value="fiji">Fiji</Select.Option>
+            <Select.Option value="finland">Finland</Select.Option>
+            <Select.Option value="france">France</Select.Option>
+            <Select.Option value="gabon">Gabon</Select.Option>
+            <Select.Option value="gambia">Gambia</Select.Option>
+            <Select.Option value="georgia">Georgia</Select.Option>
+            <Select.Option value="germany">Germany</Select.Option>
+            <Select.Option value="ghana">Ghana</Select.Option>
+            <Select.Option value="greece">Greece</Select.Option>
+            <Select.Option value="grenada">Grenada</Select.Option>
+            <Select.Option value="guatemala">Guatemala</Select.Option>
+            <Select.Option value="guinea">Guinea</Select.Option>
+            <Select.Option value="guinea_bissau">Guinea-Bissau</Select.Option>
+            <Select.Option value="guyana">Guyana</Select.Option>
+            <Select.Option value="haiti">Haiti</Select.Option>
+            <Select.Option value="honduras">Honduras</Select.Option>
+            <Select.Option value="hungary">Hungary</Select.Option>
+            <Select.Option value="iceland">Iceland</Select.Option>
+            <Select.Option value="india">India</Select.Option>
+            <Select.Option value="indonesia">Indonesia</Select.Option>
+            <Select.Option value="iran">Iran</Select.Option>
+            <Select.Option value="iraq">Iraq</Select.Option>
+            <Select.Option value="ireland">Ireland</Select.Option>
+            <Select.Option value="israel">Israel</Select.Option>
+            <Select.Option value="italy">Italy</Select.Option>
+            <Select.Option value="jamaica">Jamaica</Select.Option>
+            <Select.Option value="japan">Japan</Select.Option>
+            <Select.Option value="jordan">Jordan</Select.Option>
+            <Select.Option value="kazakhstan">Kazakhstan</Select.Option>
+            <Select.Option value="kenya">Kenya</Select.Option>
+            <Select.Option value="kiribati">Kiribati</Select.Option>
+            <Select.Option value="korea_north">Korea, North</Select.Option>
+            <Select.Option value="korea_south">Korea, South</Select.Option>
+            <Select.Option value="kuwait">Kuwait</Select.Option>
+            <Select.Option value="kyrgyzstan">Kyrgyzstan</Select.Option>
+            <Select.Option value="laos">Laos</Select.Option>
+            <Select.Option value="latvia">Latvia</Select.Option>
+            <Select.Option value="lebanon">Lebanon</Select.Option>
+            <Select.Option value="lesotho">Lesotho</Select.Option>
+            <Select.Option value="liberia">Liberia</Select.Option>
+            <Select.Option value="libya">Libya</Select.Option>
+            <Select.Option value="liechtenstein">Liechtenstein</Select.Option>
+            <Select.Option value="lithuania">Lithuania</Select.Option>
+            <Select.Option value="luxembourg">Luxembourg</Select.Option>
+            <Select.Option value="madagascar">Madagascar</Select.Option>
+            <Select.Option value="malawi">Malawi</Select.Option>
+            <Select.Option value="malaysia">Malaysia</Select.Option>
+            <Select.Option value="maldives">Maldives</Select.Option>
+            <Select.Option value="mali">Mali</Select.Option>
+            <Select.Option value="malta">Malta</Select.Option>
+            <Select.Option value="marshall_islands">Marshall Islands</Select.Option>
+            <Select.Option value="mauritania">Mauritania</Select.Option>
+            <Select.Option value="mauritius">Mauritius</Select.Option>
+            <Select.Option value="mexico">Mexico</Select.Option>
+            <Select.Option value="micronesia">Micronesia</Select.Option>
+            <Select.Option value="moldova">Moldova</Select.Option>
+            <Select.Option value="monaco">Monaco</Select.Option>
+            <Select.Option value="mongolia">Mongolia</Select.Option>
+            <Select.Option value="montenegro">Montenegro</Select.Option>
+            <Select.Option value="morocco">Morocco</Select.Option>
+            <Select.Option value="mozambique">Mozambique</Select.Option>
+            <Select.Option value="myanmar">Myanmar</Select.Option>
+            <Select.Option value="namibia">Namibia</Select.Option>
+            <Select.Option value="nauru">Nauru</Select.Option>
+            <Select.Option value="nepal">Nepal</Select.Option>
+            <Select.Option value="netherlands">Netherlands</Select.Option>
+            <Select.Option value="new_zealand">New Zealand</Select.Option>
+            <Select.Option value="nicaragua">Nicaragua</Select.Option>
+            <Select.Option value="niger">Niger</Select.Option>
+            <Select.Option value="nigeria">Nigeria</Select.Option>
+            <Select.Option value="north_macedonia">North Macedonia</Select.Option>
+            <Select.Option value="norway">Norway</Select.Option>
+            <Select.Option value="oman">Oman</Select.Option>
+            <Select.Option value="pakistan">Pakistan</Select.Option>
+            <Select.Option value="palau">Palau</Select.Option>
+            <Select.Option value="panama">Panama</Select.Option>
+            <Select.Option value="papua_new_guinea">Papua New Guinea</Select.Option>
+            <Select.Option value="paraguay">Paraguay</Select.Option>
+            <Select.Option value="peru">Peru</Select.Option>
+            <Select.Option value="philippines">Philippines</Select.Option>
+            <Select.Option value="poland">Poland</Select.Option>
+            <Select.Option value="portugal">Portugal</Select.Option>
+            <Select.Option value="qatar">Qatar</Select.Option>
+            <Select.Option value="romania">Romania</Select.Option>
+            <Select.Option value="russia">Russia</Select.Option>
+            <Select.Option value="rwanda">Rwanda</Select.Option>
+            <Select.Option value="saint_kitts_and_nevis">Saint Kitts and Nevis</Select.Option>
+            <Select.Option value="saint_lucia">Saint Lucia</Select.Option>
+            <Select.Option value="saint_vincent_and_the_grenadines">Saint Vincent and the Grenadines</Select.Option>
+            <Select.Option value="samoa">Samoa</Select.Option>
+            <Select.Option value="san_marino">San Marino</Select.Option>
+            <Select.Option value="sao_tome_and_principe">Sao Tome and Principe</Select.Option>
+            <Select.Option value="saudi_arabia">Saudi Arabia</Select.Option>
+            <Select.Option value="senegal">Senegal</Select.Option>
+            <Select.Option value="serbia">Serbia</Select.Option>
+            <Select.Option value="seychelles">Seychelles</Select.Option>
+            <Select.Option value="sierra_leone">Sierra Leone</Select.Option>
+            <Select.Option value="singapore">Singapore</Select.Option>
+            <Select.Option value="slovakia">Slovakia</Select.Option>
+            <Select.Option value="slovenia">Slovenia</Select.Option>
+            <Select.Option value="solomon_islands">Solomon Islands</Select.Option>
+            <Select.Option value="somalia">Somalia</Select.Option>
+            <Select.Option value="south_africa">South Africa</Select.Option>
+            <Select.Option value="south_korea">South Korea</Select.Option>
+            <Select.Option value="south_sudan">South Sudan</Select.Option>
+            <Select.Option value="spain">Spain</Select.Option>
+            <Select.Option value="sri_lanka">Sri Lanka</Select.Option>
+            <Select.Option value="sudan">Sudan</Select.Option>
+            <Select.Option value="suriname">Suriname</Select.Option>
+            <Select.Option value="sweden">Sweden</Select.Option>
+            <Select.Option value="switzerland">Switzerland</Select.Option>
+            <Select.Option value="syria">Syria</Select.Option>
+            <Select.Option value="taiwan">Taiwan</Select.Option>
+            <Select.Option value="tajikistan">Tajikistan</Select.Option>
+            <Select.Option value="tanzania">Tanzania</Select.Option>
+            <Select.Option value="thailand">Thailand</Select.Option>
+            <Select.Option value="timor_leste">Timor-Leste</Select.Option>
+            <Select.Option value="togo">Togo</Select.Option>
+            <Select.Option value="tonga">Tonga</Select.Option>
+            <Select.Option value="trinidad_and_tobago">Trinidad and Tobago</Select.Option>
+            <Select.Option value="tunisia">Tunisia</Select.Option>
+            <Select.Option value="turkey">Turkey</Select.Option>
+            <Select.Option value="turkmenistan">Turkmenistan</Select.Option>
+            <Select.Option value="tuvalu">Tuvalu</Select.Option>
+            <Select.Option value="uganda">Uganda</Select.Option>
+            <Select.Option value="ukraine">Ukraine</Select.Option>
+            <Select.Option value="united_arab_emirates">United Arab Emirates</Select.Option>
+            <Select.Option value="united_kingdom">United Kingdom</Select.Option>
+            <Select.Option value="united_states">United States</Select.Option>
+            <Select.Option value="uruguay">Uruguay</Select.Option>
+            <Select.Option value="uzbekistan">Uzbekistan</Select.Option>
+            <Select.Option value="vanuatu">Vanuatu</Select.Option>
+            <Select.Option value="vatican_city">Vatican City</Select.Option>
+            <Select.Option value="venezuela">Venezuela</Select.Option>
+            <Select.Option value="vietnam">Vietnam</Select.Option>
+            <Select.Option value="yemen">Yemen</Select.Option>
+            <Select.Option value="zambia">Zambia</Select.Option>
+            <Select.Option value="zimbabwe">Zimbabwe</Select.Option>
 
-          </select> <br></br>
-          <p className="inputName">Planting Date : </p> 
-          <input className="selection" type="date" name="plantingDate" onChange={handleChange} />
-        </div>
-        <div>
-        <p className="inputName">Species : </p> 
+          </Select>
+        </Form.Item>  
+ 
           
-          <select className="selection" name="species" onChange={handleChange}>
-            <option value="">Select a specie</option>
-            <option value="acacia">Acacia</option>
-            <option value="alder">Alder</option>
-            <option value="apple">Apple</option>
-            <option value="ash">Ash</option>
-            <option value="aspen">Aspen</option>
-            <option value="bamboo">Bamboo</option>
-            <option value="baobab">Baobab</option>
-            <option value="beech">Beech</option>
-            <option value="birch">Birch</option>
-            <option value="brazil-nut">Brazil Nut</option>
-            <option value="cedar">Cedar</option>
-            <option value="cherry">Cherry</option>
-            <option value="chestnut">Chestnut</option>
-            <option value="cypress">Cypress</option>
-            <option value="dogwood">Dogwood</option>
-            <option value="douglas-fir">Douglas Fir</option>
-            <option value="ebony">Ebony</option>
-            <option value="elm">Elm</option>
-            <option value="eucalyptus">Eucalyptus</option>
-            <option value="fir">Fir</option>
-            <option value="ginkgo">Ginkgo</option>
-            <option value="hawthorn">Hawthorn</option>
-            <option value="hazel">Hazel</option>
-            <option value="hickory">Hickory</option>
-            <option value="hornbeam">Hornbeam</option>
-            <option value="horse-chestnut">Horse Chestnut</option>
-            <option value="juniper">Juniper</option>
-            <option value="kauri">Kauri</option>
-            <option value="larch">Larch</option>
-            <option value="lime">Lime</option>
-            <option value="magnolia">Magnolia</option>
-            <option value="mahogany">Mahogany</option>
-            <option value="maple">Maple</option>
-            <option value="oak">Oak</option>
-            <option value="olive">Olive</option>
-            <option value="palm">Palm</option>
-            <option value="pine">Pine</option>
-            <option value="poplar">Poplar</option>
-            <option value="redwood">Redwood</option>
-            <option value="rowan">Rowan</option>
-            <option value="spruce">Spruce</option>
-            <option value="sycamore">Sycamore</option>
-            <option value="teak">Teak</option>
-            <option value="walnut">Walnut</option>
-            <option value="willow">Willow</option>
-            <option value="yew">Yew</option>
 
-          </select>
-        </div>
-        <div>
-        <p className="inputName">Quantity : </p> 
-          <input className="selection" type="number" name="quantity" value={treeInfo.quantity} onChange={handleChange} />
-        </div>
-        <button className="selectionSubmit" type="submit">Next Step</button>
+          {/* <p className="inputName">Planting Date : </p>  */}
+          <Form.Item label="Planting Date">
+          <DatePicker />
+        </Form.Item>
+        
+        
+        <Form.Item label="Species">
+          <Select placeholder="Select a specie">
+            <Select.Option value="Others">Others</Select.Option>
+            <Select.Option value="acacia">Acacia</Select.Option>
+            <Select.Option value="alder">Alder</Select.Option>
+            <Select.Option value="apple">Apple</Select.Option>
+            <Select.Option value="ash">Ash</Select.Option>
+            <Select.Option value="aspen">Aspen</Select.Option>
+            <Select.Option value="bamboo">Bamboo</Select.Option>
+            <Select.Option value="baobab">Baobab</Select.Option>
+            <Select.Option value="beech">Beech</Select.Option>
+            <Select.Option value="birch">Birch</Select.Option>
+            <Select.Option value="brazil-nut">Brazil Nut</Select.Option>
+            <Select.Option value="cedar">Cedar</Select.Option>
+            <Select.Option value="cherry">Cherry</Select.Option>
+            <Select.Option value="chestnut">Chestnut</Select.Option>
+            <Select.Option value="cypress">Cypress</Select.Option>
+            <Select.Option value="dogwood">Dogwood</Select.Option>
+            <Select.Option value="douglas-fir">Douglas Fir</Select.Option>
+            <Select.Option value="ebony">Ebony</Select.Option>
+            <Select.Option value="elm">Elm</Select.Option>
+            <Select.Option value="eucalyptus">Eucalyptus</Select.Option>
+            <Select.Option value="fir">Fir</Select.Option>
+            <Select.Option value="ginkgo">Ginkgo</Select.Option>
+            <Select.Option value="hawthorn">Hawthorn</Select.Option>
+            <Select.Option value="hazel">Hazel</Select.Option>
+            <Select.Option value="hickory">Hickory</Select.Option>
+            <Select.Option value="hornbeam">Hornbeam</Select.Option>
+            <Select.Option value="horse-chestnut">Horse Chestnut</Select.Option>
+            <Select.Option value="juniper">Juniper</Select.Option>
+            <Select.Option value="kauri">Kauri</Select.Option>
+            <Select.Option value="larch">Larch</Select.Option>
+            <Select.Option value="lime">Lime</Select.Option>
+            <Select.Option value="magnolia">Magnolia</Select.Option>
+            <Select.Option value="mahogany">Mahogany</Select.Option>
+            <Select.Option value="maple">Maple</Select.Option>
+            <Select.Option value="oak">Oak</Select.Option>
+            <Select.Option value="olive">Olive</Select.Option>
+            <Select.Option value="palm">Palm</Select.Option>
+            <Select.Option value="pine">Pine</Select.Option>
+            <Select.Option value="poplar">Poplar</Select.Option>
+            <Select.Option value="redwood">Redwood</Select.Option>
+            <Select.Option value="rowan">Rowan</Select.Option>
+            <Select.Option value="spruce">Spruce</Select.Option>
+            <Select.Option value="sycamore">Sycamore</Select.Option>
+            <Select.Option value="teak">Teak</Select.Option>
+            <Select.Option value="walnut">Walnut</Select.Option>
+            <Select.Option value="willow">Willow</Select.Option>
+            <Select.Option value="yew">Yew</Select.Option>
+          </Select>
+        </Form.Item>  
+        
+        
+        <Form.Item label="Tree Number">
+          <InputNumber />
+        </Form.Item>
+        
+        {/* <button className="selectionSubmit" type="submit">Next Step</button> */}
+        <Form.Item wrapperCol={{ xs: { span: 24, offset: 0 }, sm: { span: 16, offset: 8 } }}>
+        <Button className="selectionSubmit" type="primary" htmlType="submit">
+          Next Step
+        </Button>
+      </Form.Item>
       </form>
     </>
   );
