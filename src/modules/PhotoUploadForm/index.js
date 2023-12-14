@@ -13,10 +13,15 @@ const PhotoUploadForm = ({ onUpload }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="file" onChange={handleFileChange} />
+    <>
+    <div className="stepImg stepImg2"></div>
+    <h2 className="stepTitle">Upload Planting Photos</h2>
+    <p className="stepIntro">You have the option to upload photos capturing the tree planting process, serving as a visual record and enabling you to share this meaningful experience with others.</p>
+    <form className="contriFormContent" onSubmit={handleSubmit}>
+      <input className="selection" type="file" onChange={handleFileChange} />
       <button type="submit">Upload</button>
     </form>
+    </>
   );
 };
 
