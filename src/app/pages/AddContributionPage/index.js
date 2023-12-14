@@ -26,9 +26,9 @@ const AddContributionPage = () => {
     setCurrentStep(2);
   };
 
-  const handlePhotoUpload = (newPhotos) => {
-    setPhotos(newPhotos);
-    setCurrentStep(3);
+
+  const handleNextStep = () => {
+    setCurrentStep(currentStep + 1);
   };
 
   const handleNoteSubmit = (newNote) => {
@@ -50,7 +50,7 @@ const AddContributionPage = () => {
         <div className="contriForm">
           <StepIndicator currentStep={currentStep} />
           {currentStep === 1 && <TreeInfoForm onSubmit={handleTreeInfoSubmit} />}
-          {currentStep === 2 && <PhotoUploadForm onNext={handlePhotoUpload} />}
+          {currentStep === 2 && <PhotoUploadForm onPhotoUploadComplete={handleNextStep} />}
           {currentStep === 3 && <NoteForm onNext={handleNoteSubmit} />}
         </div>
       </div>

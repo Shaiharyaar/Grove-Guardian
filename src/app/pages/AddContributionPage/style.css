@@ -88,6 +88,12 @@
     height: 3rem;
     background-repeat: no-repeat;
 }
+.stepImg3{
+    background-image: url(../../../images/step3.png);
+    background-size: contain;
+    height: 3rem;
+    background-repeat: no-repeat;
+}
 .selection{
     height: 1.9rem;
     margin-top: 1%;
@@ -112,3 +118,23 @@
     margin-left: auto;   /* 自動邊距將按鈕推向右側 */
     margin-right: 0; 
 }
+.preview-item {
+    display: inline-block; /* 或者 flex, 根據需要 */
+    position: relative;
+  }
+  
+  .preview-item button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* 其他按鈕樣式 */
+  }
+.textarea{
+    width: 98%;
+    height: 10rem;
+}
+.noteLabel{
+    color: black;
+}
+
+  
