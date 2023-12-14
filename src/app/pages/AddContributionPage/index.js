@@ -33,9 +33,9 @@ const AddContributionPage = () => {
 
   const handleNoteSubmit = (newNote) => {
     setNote(newNote);
-    // This would be the final step - submit all data (treeInfo, photos, note) to backend
+
     console.log(treeInfo, photos, note);
-    // You can handle the final submission here
+
   };
 
   return (
