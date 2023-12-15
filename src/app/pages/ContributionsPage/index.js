@@ -94,7 +94,7 @@ const contributors = [
   { id: 30, name: 'Charlie Daniels', treesPlanted: 93, location: 'Las Vegas, NV', avatar: 'C' },
 ]
 
-const { Title, Paragraph } = Typography
+const { Title } = Typography
 const pageSize = 10
 const ContributionsPage = () => {
   const [currentPage, setCurrentPage] = useState(1)

@@ -60,6 +60,17 @@ export default function Header() {
       <a
         style={{
           fontSize: 18,
+          textDecoration: path === '/login' ? 'green wavy underline' : '',
+          fontWeight: 500,
+          marginRight: 100,
+        }}
+        href='/faq'
+      >
+        Login
+      </a>
+      <a
+        style={{
+          fontSize: 18,
           textDecoration: path === '/faq' ? 'green wavy underline' : '',
           fontWeight: 500,
           marginRight: 100,
