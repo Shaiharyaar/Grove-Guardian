@@ -1,0 +1,26 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    background-color:#F1F2EE;
+  }
+
+  .contribution-page {
+    padding: 20px;
+    background-color:#F1F2EE;
+  }
+
+  .title{
+    margin: auto;
+    text-align: center;
+  }
+
+  .paragraph {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .pagination {
+    text-align: center;
+  }
