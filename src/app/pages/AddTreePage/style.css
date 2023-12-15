@@ -33,24 +33,152 @@
     width: 54%;
     height: 80vh;
     background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 4% 20% 4% 4%;
     border-radius: 14px 60px 14px 14px;
 }
 .contriFormContent{
     width: 80%;
+    margin: auto;
+    display: block;
+    /* outline: red solid; */
+    margin-top: 1%;
+}
+.stepIndicator{
+    margin-top: 5%;
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+.stepIndicatorImg{
+    margin-top: 10%;
+    display: block;
+}
+.stepTitle{
+    font-size: 1.8rem;
+    color: #386641;
+    width: 80%;
+    margin: auto;
+    margin-top: 2%;
+}
+.stepIntro{
+    width: 80%;
+    margin: auto;
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+    margin-top: 1%;
+    color: #386641;
+    font-weight: 600;
+    margin-bottom: 3%;
+}
+.stepImg{
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    /* outline: red solid; */
+}
+.stepImg1{
+    background-image: url(../../../images/step1.png);
+    background-size: contain;
+    height: 3rem;
+    background-repeat: no-repeat;
+}
+.stepImg2{
+    background-image: url(../../../images/step2.png);
+    background-size: contain;
+    height: 3rem;
+    background-repeat: no-repeat;
+}
+.stepImg3{
+    background-image: url(../../../images/step3.png);
+    background-size: contain;
+    height: 3rem;
+    background-repeat: no-repeat;
+}
+.selection{
+    height: 1.9rem;
+    margin-top: 1%;
+}
+.inputName{
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+    margin-right: 1.5%;
+}
+.selectionSubmit{
+    width: 60%;
+    height: 50px;
+    margin: auto;
+    margin-top: 5%;
+    background-color: #386641;
+    color: #FFB628;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: block;      /* 使按鈕作為塊級元素 */
+    margin-left: auto;   /* 自動邊距將按鈕推向右側 */
+    margin-right: 0; 
+}
+.preview-item {
+    display: inline-block; /* 或者 flex, 根據需要 */
+    position: relative;
+  }
+  
+  .preview-item button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* 其他按鈕樣式 */
+  }
+.textarea{
+    width: 98%;
+    height: 10rem;
+}
+.noteLabel{
+    color: black;
+}
+:where(.css-dev-only-do-not-override-3fxhx0).ant-form-item {
     margin-bottom: 12px;
 }
-:where(.css-dev-only-do-not-override-mj4wpe).ant-form-item .ant-form-item-label {
-    width: 30%;
+:where(.css-dev-only-do-not-override-3fxhx0).ant-form-item .ant-form-item-label {
     width: 35%;
 }
 .uploadLabel{
     width:100%;
-:where(.css-mj4wpe).ant-form-item {
+    overflow: scroll;
+    height: 30%;
+    margin-top: -3%;
+}  
+:where(.css-dev-only-do-not-override-3fxhx0).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload-list.ant-upload-list-picture-card .ant-upload-list-item-container{
+    width: 80px;
+    height: 80px;
+}
+:where(.css-dev-only-do-not-override-3fxhx0).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload.ant-upload-select{
+    width: 80px;
+    height: 80px;
+}
+:where(.css-dev-only-do-not-override-3fxhx0).ant-upload-wrapper .ant-upload-list.ant-upload-list-picture-card .ant-upload-list-item-error{
+    border-color: rgba(5, 5, 5, 0.1);
+}
+textarea:where(.css-dev-only-do-not-override-3fxhx0).ant-input {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+.noteBtnSec{
+    width: 80%;
+    margin: auto;
+}
+.noteBtnSec .selectionSubmit{
+    width: 40%;
+}
+.ant-form-item.css-3fxhx0{
     margin-bottom: 12px;
 }
+:where(.css-3fxhx0).ant-form-item {
+    margin-bottom: 12px;
 }
-:where(.css-dev-only-do-not-override-mj4wpe).ant-form-item .ant-form-item-label >label {
+
+:where(.css-dev-only-do-not-override-3fxhx0).ant-form-item .ant-form-item-label >label {
     font-weight: 600;
 }
 @media screen and (max-width: 767px) {
@@ -78,7 +206,7 @@
     }
     .contributionSec {
         height: auto;
-        min-height: 110vh;
+        min-height: 120vh;
         width: 100%;
         padding-bottom: 20%;
     }
@@ -113,10 +241,10 @@
         font-size: 1rem;
         line-height: 1.5rem;
     } 
-    :where(.css-dev-only-do-not-override-mj4wpe).ant-form-item {
+    :where(.css-dev-only-do-not-override-3fxhx0).ant-form-item {
         margin-bottom: 4px;
     }
-    :where(.css-dev-only-do-not-override-mj4wpe).ant-form-item .ant-form-item-label {
+    :where(.css-dev-only-do-not-override-3fxhx0).ant-form-item .ant-form-item-label {
         width: 100%;
         margin-bottom: -2%;
     }

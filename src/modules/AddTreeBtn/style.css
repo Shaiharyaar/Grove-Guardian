@@ -1,4 +1,5 @@
-:where(.css-dev-only-do-not-override-mj4wpe).ant-btn.ant-btn-circle {
+
+:where(.css-dev-only-do-not-override-3fxhx0).ant-btn.ant-btn-circle {
     position: fixed;
     right: 60px;
     bottom: 60px;
@@ -8,7 +9,7 @@
 }
 
 @media screen and (max-width: 767px) {
-    :where(.css-dev-only-do-not-override-mj4wpe).ant-btn.ant-btn-circle {
+    :where(.css-dev-only-do-not-override-3fxhx0).ant-btn.ant-btn-circle {
         right: 20px;
         bottom: 20px;
         width: 78px;

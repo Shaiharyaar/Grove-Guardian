@@ -41,7 +41,7 @@ const AddTreePage = () => {
 
   return (
     <div className="contributionSec">
-      <Header />
+      {/* <Header /> */}
       <div className="container">
 
         <div className="introContri">
