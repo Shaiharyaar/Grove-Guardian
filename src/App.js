@@ -1,13 +1,14 @@
-import { ConfigProvider } from 'antd'
+import { App as AntDApp, ConfigProvider } from 'antd'
 import './App.css'
 import { useApp } from './app/hooks/useApp'
 import Navigation from './app/route'
 import AppContainer from './modules/common/Containers/Main'
+
 function App() {
   const { themeConfig } = useApp()
 
   return (
-    <>
+    <AntDApp>
       {/* Theme Config will be added here */}
       <ConfigProvider theme={themeConfig}>
         <AppContainer>
@@ -17,7 +18,7 @@ function App() {
           <Navigation />
         </AppContainer>
       </ConfigProvider>
-    </>
+    </AntDApp>
   )
 }
 

@@ -9,7 +9,7 @@ const Container = (props) => {
       {...props}
       style={{
         ...props?.style,
-        background: token.colorPrimaryBg,
+        backgroundColor: token.colorPrimaryBg,
       }}
     ></div>
   )

@@ -5,9 +5,10 @@ import {
   ErrorPage,
   FAQPage,
   HomePage,
+  LoginPage,
   NotFoundPage,
   ProfilePage,
-  StatisticsPage
+  StatisticsPage,
 } from '../pages'
 import AddContributionPage from '../pages/AddContributionPage'
 import MainPage from '../pages/MainPage'
@@ -43,6 +44,11 @@ export default createBrowserRouter([
         element: <ProfilePage />,
       },
     ],
+  },
+  {
+    path: '/login',
+    element: <LoginPage />,
+    errorElement: <ErrorPage />,
   },
 
   {
