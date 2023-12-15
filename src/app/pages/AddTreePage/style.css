@@ -133,6 +133,12 @@
     width: 98%;
     height: 10rem;
 }
+textarea:where(.css-3fxhx0).ant-input {
+    max-width: 80%;
+    margin: auto;
+    display: block;
+    height: auto;
+}
 .noteLabel{
     color: black;
 }
