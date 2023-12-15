@@ -175,3 +175,7 @@ textarea:where(.css-dev-only-do-not-override-mj4wpe).ant-input {
 .ant-form-item.css-mj4wpe{
     margin-bottom: 12px;
 }
+:where(.css-mj4wpe).ant-form-item {
+    margin-bottom: 12px;
+
+}
