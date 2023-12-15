@@ -9,6 +9,7 @@ import {
   NotFoundPage,
   ProfilePage,
   StatisticsPage,
+  AddTreePage
 } from '../pages'
 import AddContributionPage from '../pages/AddContributionPage'
 import MainPage from '../pages/MainPage'
@@ -30,6 +31,10 @@ export default createBrowserRouter([
       {
         path: '/add-contribution',
         element: <AddContributionPage />,
+      },
+      {
+        path: '/add-tree',
+        element: <AddTreePage />,
       },
       {
         path: '/contributions',

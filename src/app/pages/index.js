@@ -6,6 +6,7 @@ import FAQPage from './FAQPage'
 import ErrorPage from './ErrorPage'
 import NotFoundPage from './NotFoundPage'
 import AddContributionPage from './AddContributionPage'
+import AddTreePage from './AddTreePage'
 import LoginPage from './LoginPage'
 
 export {
@@ -18,4 +19,5 @@ export {
   NotFoundPage,
   AddContributionPage,
   LoginPage,
+  AddTreePage,
 }
