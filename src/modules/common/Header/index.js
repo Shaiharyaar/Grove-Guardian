@@ -64,7 +64,7 @@ export default function Header() {
           fontWeight: 500,
           marginRight: 100,
         }}
-        href='/faq'
+        href='/login'
       >
         Login
       </a>
