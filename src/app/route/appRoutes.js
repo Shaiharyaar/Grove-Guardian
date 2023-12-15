@@ -7,6 +7,7 @@ import {
   FAQPage,
   StatisticsPage,
   AddContributionPage,
+  AddTreePage,
 } from '../pages'
 import { createBrowserRouter } from 'react-router-dom'
 
@@ -30,6 +31,11 @@ export default createBrowserRouter([
   {
     path: '/add-contribution',
     element: <AddContributionPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/add-tree',
+    element: <AddTreePage />,
     errorElement: <ErrorPage />,
   },
   {

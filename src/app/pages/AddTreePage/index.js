@@ -6,6 +6,7 @@ import StepIndicator from '../../../modules/StepIndicator';
 import TreeInfoForm from '../../../modules/TreeInfoForm';
 import PhotoUploadForm from '../../../modules/PhotoUploadForm';
 import NoteForm from '../../../modules/NoteForm';
+import AddTreeBtn from '../../../modules/AddTreeBtn';
 import './style.css';
 
 
@@ -54,6 +55,7 @@ const AddTreePage = () => {
           {currentStep === 3 && <NoteForm onNext={handleNoteSubmit} />}
         </div>
       </div>
+      <AddTreeBtn />
     </div>
   );
 };
