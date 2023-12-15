@@ -1,11 +1,10 @@
-import { Button, ConfigProvider } from 'antd'
+import { ConfigProvider } from 'antd'
 import './App.css'
-import AppContainer from './modules/common/Containers/Main'
 import { useApp } from './app/hooks/useApp'
 import Navigation from './app/route'
-import { HomePage } from './app/pages'
+import AppContainer from './modules/common/Containers/Main'
 function App() {
-  const { themeConfig, toggleTheme } = useApp()
+  const { themeConfig } = useApp()
 
   return (
     <>

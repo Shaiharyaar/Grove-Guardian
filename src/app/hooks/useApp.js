@@ -9,9 +9,6 @@ export const useApp = () => {
     () => (currentTheme === 'light' ? theme.lightTheme : theme.darkTheme),
     [currentTheme]
   )
-
-  console.log({ currentTheme })
-  console.log({ themeConfig })
   return {
     themeConfig,
     toggleTheme,

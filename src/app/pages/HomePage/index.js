@@ -1,89 +1,169 @@
-import React, {useState, useRef, useLayoutEffect} from 'react'
 import { Typography } from 'antd'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 // import { a, useSpring } from '@react-spring/three'
+import {
+  AccumulativeShadows,
+  CameraControls,
+  Environment,
+  Float,
+  Instance,
+  Instances,
+  Lightformer,
+  MeshTransmissionMaterial,
+  RandomizedLight,
+  useGLTF,
+  useMask,
+} from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import { useGLTF } from '@react-three/drei'
-import { useMask, useAnimations, Float, Instance, Instances, MeshTransmissionMaterial, CameraControls } from '@react-three/drei'
-import { Lightformer, Environment, RandomizedLight, AccumulativeShadows } from '@react-three/drei'
-import Header from '../../../modules/common/Header'
-
-
 
 const HomePage = () => {
-  const { Title, Text } = Typography
-  const [active, setActive] = useState(0)
-  const spheres=[
-        [1, 'orange', 0.05, [-4, -1, -1]],
-        [0.75, 'hotpink', 0.1, [-4, 2, -2]],
-        [1.25, 'aquamarine', 0.2, [4, -3, 2]],
-        [1.5, 'lightblue', 0.3, [-4, -2, -3]],
-        [2, 'pink', 0.3, [-4, 2, -4]],
-        [2, 'skyblue', 0.3, [-4, 2, -4]],
-        [1.5, 'orange', 0.05, [-4, -1, -1]],
-        [2, 'hotpink', 0.1, [-4, 2, -2]],
-        [1.5, 'aquamarine', 0.2, [4, -3, 2]],
-        [1.25, 'lightblue', 0.3, [-4, -2, -3]],
-        [1, 'pink', 0.3, [-4, 2, -4]],
-        [1, 'skyblue', 0.3, [-4, 2, -4]]
-      ]
+  const { Title } = Typography
+  const spheres = [
+    [1, 'orange', 0.05, [-4, -1, -1]],
+    [0.75, 'hotpink', 0.1, [-4, 2, -2]],
+    [1.25, 'aquamarine', 0.2, [4, -3, 2]],
+    [1.5, 'lightblue', 0.3, [-4, -2, -3]],
+    [2, 'pink', 0.3, [-4, 2, -4]],
+    [2, 'skyblue', 0.3, [-4, 2, -4]],
+    [1.5, 'orange', 0.05, [-4, -1, -1]],
+    [2, 'hotpink', 0.1, [-4, 2, -2]],
+    [1.5, 'aquamarine', 0.2, [4, -3, 2]],
+    [1.25, 'lightblue', 0.3, [-4, -2, -3]],
+    [1, 'pink', 0.3, [-4, 2, -4]],
+    [1, 'skyblue', 0.3, [-4, 2, -4]],
+  ]
 
   return (
     <>
-    <Header/>
-    <div style={{position: "fixed",paddingLeft: 100, backgroundColor: "rgba(0;0;0;0)", paddingRight: 100, paddingTop: 10, zIndex: 900, top: 62, width: "100%"}}>
-      <Title style={{color: "#133A37", fontSize: "70px", marginBottom: -30}} >Together we have planted</Title>
-      <Title style={{color: "#133A37", fontSize: "40px"}}>700,400,200 Trees</Title>
-    </div>
-    
-    <div style={{position: "relative", width: "100%", height: "100%", overflow: "hidden"}}>
-    <Canvas style={{display: "block"}} shadows camera={{ position: [30, 0, -3], fov: 35, near: 1, far: 50 }}>
-      <color attach="background" args={['#F1F2EE']} />
+      <div
+        style={{
+          position: 'fixed',
+          paddingLeft: 100,
+          backgroundColor: 'rgba(0;0;0;0)',
+          paddingRight: 100,
+          paddingTop: 10,
+          zIndex: 900,
+          top: 62,
+          width: '100%',
+        }}
+      >
+        <Title style={{ color: '#133A37', fontSize: '70px', marginBottom: -30 }}>
+          Together we have planted
+        </Title>
+        <Title style={{ color: '#133A37', fontSize: '40px' }}>700,400,200 Trees</Title>
+      </div>
 
-      {/** Glass aquarium */}
-      <Aquarium scale={[1, 0.9, 1]} position={[0, -1, 0]}>
-        <Float rotationIntensity={2} floatIntensity={10} speed={2}>
-          <Model scale={[1.5, 1.5, 1.5]} position={[1, 1, 0.5]}/>
-        </Float>
-        <Float position={[0, 0, 4]} rotationIntensity={3} floatIntensity={10} speed={2} floatingRange={[0.2, -0.2]}>
-          <Model scale={[0.9, 0.9, 0.9]} position={[1, 1, 0.5]}/>
-          
-        </Float>
-        <Float position={[-3, 0, 2]} rotationIntensity={2} floatIntensity={4} speed={2}>
-          <Model position={[1, -4, 0.5]}/>
-        </Float>
-        <Float position={[0, 0, -4]} rotationIntensity={3} floatIntensity={10} speed={2} floatingRange={[-0.4, 0]}>
-          <Model position={[1, 0, 0.5]}/>
-        </Float>
-        <Float position={[-4, -2, -4]} rotationIntensity={2} floatIntensity={4} speed={2} floatingRange={[0, 0.4]}>
-          <Model scale={[0.9, 0.9, 0.9]}position={[1, -2, 0.5]}/>
-        </Float>
-        <Instances renderOrder={-1000}>
-          <sphereGeometry args={[1, 64, 64]} />
-          <meshBasicMaterial depthTest={false} />
-          {spheres.map(([scale, color, speed, position], index) => (
-            <Sphere key={index} scale={scale} color={color} speed={speed} position={position} />
-          ))}
-        </Instances>
-      </Aquarium>
-      {/** Soft shadows */}
-      <AccumulativeShadows temporal frames={100} color="#AAFF00" colorBlend={2} opacity={0.9} scale={60} position={[0, -6, 0]}>
-        <RandomizedLight amount={8} radius={15} ambient={0.5} intensity={1} position={[-5, 10, -5]} size={20} />
-      </AccumulativeShadows>
-      {/** Custom environment map */}
-      <Environment resolution={1024}>
-        <group rotation={[-Math.PI / 3, 0, 0]}>
-          <Lightformer intensity={4} rotation-x={Math.PI / 2} position={[0, 5, -9]} scale={[10, 10, 1]} />
-          {[2, 0, 2, 0, 2, 0, 2, 0].map((x, i) => (
-            <Lightformer key={i} form="circle" intensity={4} rotation={[Math.PI / 2, 0, 0]} position={[x, 4, i * 4]} scale={[4, 1, 1]} />
-          ))}
-          <Lightformer intensity={2} rotation-y={Math.PI / 2} position={[-5, 1, -1]} scale={[50, 2, 1]} />
-          <Lightformer intensity={2} rotation-y={-Math.PI / 2} position={[10, 1, 0]} scale={[50, 2, 1]} />
-        </group>
-      </Environment>
-      <CameraControls truckSpeed={0} dollySpeed={0} minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
-    </Canvas>
-    </div>
+      <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
+        <Canvas
+          style={{ display: 'block' }}
+          shadows
+          camera={{ position: [30, 0, -3], fov: 35, near: 1, far: 50 }}
+        >
+          <color attach='background' args={['#F1F2EE']} />
+
+          {/** Glass aquarium */}
+          <Aquarium scale={[1, 0.9, 1]} position={[0, -1, 0]}>
+            <Float rotationIntensity={2} floatIntensity={10} speed={2}>
+              <Model scale={[1.5, 1.5, 1.5]} position={[1, 1, 0.5]} />
+            </Float>
+            <Float
+              position={[0, 0, 4]}
+              rotationIntensity={3}
+              floatIntensity={10}
+              speed={2}
+              floatingRange={[0.2, -0.2]}
+            >
+              <Model scale={[0.9, 0.9, 0.9]} position={[1, 1, 0.5]} />
+            </Float>
+            <Float position={[-3, 0, 2]} rotationIntensity={2} floatIntensity={4} speed={2}>
+              <Model position={[1, -4, 0.5]} />
+            </Float>
+            <Float
+              position={[0, 0, -4]}
+              rotationIntensity={3}
+              floatIntensity={10}
+              speed={2}
+              floatingRange={[-0.4, 0]}
+            >
+              <Model position={[1, 0, 0.5]} />
+            </Float>
+            <Float
+              position={[-4, -2, -4]}
+              rotationIntensity={2}
+              floatIntensity={4}
+              speed={2}
+              floatingRange={[0, 0.4]}
+            >
+              <Model scale={[0.9, 0.9, 0.9]} position={[1, -2, 0.5]} />
+            </Float>
+            <Instances renderOrder={-1000}>
+              <sphereGeometry args={[1, 64, 64]} />
+              <meshBasicMaterial depthTest={false} />
+              {spheres.map(([scale, color, speed, position], index) => (
+                <Sphere key={index} scale={scale} color={color} speed={speed} position={position} />
+              ))}
+            </Instances>
+          </Aquarium>
+          {/** Soft shadows */}
+          <AccumulativeShadows
+            temporal
+            frames={100}
+            color='#AAFF00'
+            colorBlend={2}
+            opacity={0.9}
+            scale={60}
+            position={[0, -6, 0]}
+          >
+            <RandomizedLight
+              amount={8}
+              radius={15}
+              ambient={0.5}
+              intensity={1}
+              position={[-5, 10, -5]}
+              size={20}
+            />
+          </AccumulativeShadows>
+          {/** Custom environment map */}
+          <Environment resolution={1024}>
+            <group rotation={[-Math.PI / 3, 0, 0]}>
+              <Lightformer
+                intensity={4}
+                rotation-x={Math.PI / 2}
+                position={[0, 5, -9]}
+                scale={[10, 10, 1]}
+              />
+              {[2, 0, 2, 0, 2, 0, 2, 0].map((x, i) => (
+                <Lightformer
+                  key={i}
+                  form='circle'
+                  intensity={4}
+                  rotation={[Math.PI / 2, 0, 0]}
+                  position={[x, 4, i * 4]}
+                  scale={[4, 1, 1]}
+                />
+              ))}
+              <Lightformer
+                intensity={2}
+                rotation-y={Math.PI / 2}
+                position={[-5, 1, -1]}
+                scale={[50, 2, 1]}
+              />
+              <Lightformer
+                intensity={2}
+                rotation-y={-Math.PI / 2}
+                position={[10, 1, 0]}
+                scale={[50, 2, 1]}
+              />
+            </group>
+          </Environment>
+          <CameraControls
+            truckSpeed={0}
+            dollySpeed={0}
+            minPolarAngle={0}
+            maxPolarAngle={Math.PI / 2}
+          />
+        </Canvas>
+      </div>
     </>
   )
 }
@@ -104,7 +184,8 @@ const Box = (props) => {
       scale={active ? 1.5 : 1}
       onClick={(event) => setActive(!active)}
       onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}>
+      onPointerOut={(event) => setHover(false)}
+    >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
@@ -167,8 +248,16 @@ export function Model(props) {
   const { nodes, materials } = useGLTF('/mld-transformed.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Tree_0_Tree_0Mat_0.geometry} material={materials.Tree_0Mat} scale={0.01} />
-      <mesh geometry={nodes.Tree_1_Tree_1Mat_0.geometry} material={materials.Tree_1Mat} scale={0.01} />
+      <mesh
+        geometry={nodes.Tree_0_Tree_0Mat_0.geometry}
+        material={materials.Tree_0Mat}
+        scale={0.01}
+      />
+      <mesh
+        geometry={nodes.Tree_1_Tree_1Mat_0.geometry}
+        material={materials.Tree_1Mat}
+        scale={0.01}
+      />
     </group>
   )
 }
