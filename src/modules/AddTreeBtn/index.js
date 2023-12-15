@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom'; 
 import yourImage from '../../images/addTreeBtnIcon.svg';
+import './style.css';
 
 const AddTreeBtn = () => {
   const navigate = useNavigate(); 
@@ -15,14 +16,6 @@ const AddTreeBtn = () => {
       onClick={handleClick} 
       shape="circle"
       type="primary"
-      style={{
-        position: 'fixed',
-        right: 60,
-        bottom: 60,
-        width: 90,
-        height: 90,
-        zIndex:9999999999999,
-      }}
     >
       <img src={yourImage} alt="Icon" style={{ width: '100%', height: '100%', marginTop: -10 }} />
       <p style={{

@@ -34,7 +34,7 @@
     width: 54%;
     height: 80vh;
     background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 4% 20% 4% 4%;
+    border-radius: 14px 60px 14px 14px;
 }
 .contriFormContent{
     width: 80%;
@@ -141,7 +141,7 @@
     margin-bottom: 12px;
 }
 :where(.css-dev-only-do-not-override-mj4wpe).ant-form-item .ant-form-item-label {
-    width: 30%;
+    width: 35%;
 }
 .uploadLabel{
     width:100%;
@@ -179,3 +179,79 @@ textarea:where(.css-dev-only-do-not-override-mj4wpe).ant-input {
     margin-bottom: 12px;
 
 }
+:where(.css-dev-only-do-not-override-mj4wpe).ant-form-item .ant-form-item-label >label {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 767px) {
+    .introContri{
+        width: 94%;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin: auto;
+    }
+    .contriForm{
+        width: 100%;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.85);
+        border-radius: 16px 60px 16px 16px;
+        margin-top: 5%;
+        padding-top: 7%;
+        padding-bottom: 9%;
+    }
+    .container {
+        width: 90vw;
+        max-width: 920px;
+        margin: auto;
+        padding-top: 1.5rem;
+        display: block;
+    }
+    .contributionSec {
+        height: auto;
+        min-height: 110vh;
+        width: 100%;
+        padding-bottom: 20%;
+    }
+    .contriTitle {
+        color: white !important;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        font-size: 2.2rem !important;
+        padding-top: 0.1rem;
+    }
+    .contriText {
+        color: white;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+    .stepImg{
+        margin-top: 3%;
+        /* outline: red solid; */
+    }
+    .stepImg1{
+        background-image: url(../../../images/step1_sp.png);
+    }
+    .stepImg2{
+        background-image: url(../../../images/step2_sp.png);
+    }
+    .stepImg3{
+        background-image: url(../../../images/step3_sp.png);
+    }   
+    .stepIntro {
+        margin-bottom: 4%;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    } 
+    :where(.css-dev-only-do-not-override-mj4wpe).ant-form-item {
+        margin-bottom: 4px;
+    }
+    :where(.css-dev-only-do-not-override-mj4wpe).ant-form-item .ant-form-item-label {
+        width: 100%;
+        margin-bottom: -2%;
+    }
+    .stepTitle {
+        margin-top: 6%;
+    }
+  }
+  
