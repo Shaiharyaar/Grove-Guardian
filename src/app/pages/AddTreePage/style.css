@@ -172,3 +172,6 @@ textarea:where(.css-dev-only-do-not-override-mj4wpe).ant-input {
 .noteBtnSec .selectionSubmit{
     width: 40%;
 }
+.ant-form-item.css-mj4wpe{
+    margin-bottom: 12px;
+}
