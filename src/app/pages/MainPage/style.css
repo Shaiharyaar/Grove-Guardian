@@ -2,5 +2,5 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  height: calc(100% - 60px);
+  height: calc(100% - 61px);
 }
