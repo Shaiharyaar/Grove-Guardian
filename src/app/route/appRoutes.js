@@ -1,46 +1,53 @@
 import React from 'react'
+import { createBrowserRouter } from 'react-router-dom'
 import {
-  HomePage,
+  ContributionsPage,
   ErrorPage,
+  FAQPage,
+  HomePage,
+  LoginPage,
   NotFoundPage,
   ProfilePage,
-  FAQPage,
   StatisticsPage,
-  AddContributionPage,
-  AddTreePage,
 } from '../pages'
-import { createBrowserRouter } from 'react-router-dom'
+import AddContributionPage from '../pages/AddContributionPage'
+import MainPage from '../pages/MainPage'
 
 export default createBrowserRouter([
   {
     path: '/',
-    element: <HomePage />,
+    element: <MainPage />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: '/statistics',
+        element: <StatisticsPage />,
+      },
+      {
+        path: '/add-contribution',
+        element: <AddContributionPage />,
+      },
+      {
+        path: '/contributions',
+        element: <ContributionsPage />,
+      },
+      {
+        path: '/faq',
+        element: <FAQPage />,
+      },
+      {
+        path: '/profile',
+        element: <ProfilePage />,
+      },
+    ],
   },
   {
-    path: '/profile',
-    element: <ProfilePage />,
-    errorElement: <ErrorPage />,
-  },
-
-  {
-    path: '/statistics',
-    element: <StatisticsPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: '/add-contribution',
-    element: <AddContributionPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: '/add-tree',
-    element: <AddTreePage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: '/faq',
-    element: <FAQPage />,
+    path: '/login',
+    element: <LoginPage />,
     errorElement: <ErrorPage />,
   },
 

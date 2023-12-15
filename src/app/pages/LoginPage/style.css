@@ -1,0 +1,27 @@
+.login-page-container {
+  height: 100%;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=3274&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  overflow: auto;
+}
+
+.login-container {
+  padding: 16px 32px;
+  border-radius: 15px;
+  display: flex;
+  margin: auto;
+  min-height: 200px;
+  min-width: 300px;
+  width: 100%;
+  max-width: 510px;
+}
+
+@media only screen and (max-width: 600px) {
+  .login-container {
+    transform: scale(0.9);
+  }
+}
