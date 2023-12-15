@@ -200,7 +200,7 @@ const ProfilePage = () => {
               renderItem={(contributor) => (
                 <List.Item>
                   <List.Item.Meta
-                    avatar={<Avatar icon={<UserOutlined />} />}
+                    avatar={<Avatar icon={<UserOutlined />} src={imageUrl} />}
                     title={`${firstName} ${lastName}`}
                     description={
                       <Space>
@@ -221,6 +221,6 @@ const ProfilePage = () => {
   )
 }
 
-const NoContribution = () => <img className={"no-contribution-img"} src={noDataSvg} alt='no data' />
+const NoContribution = () => <img className={'no-contribution-img'} src={noDataSvg} alt='no data' />
 
 export default ProfilePage
