@@ -1,18 +1,18 @@
 import React from 'react';
 import { Button } from 'antd';
-import { useNavigate } from 'react-router-dom'; // 导入 useNavigate 钩子
+import { useNavigate } from 'react-router-dom'; 
 import yourImage from '../../images/addTreeBtnIcon.svg';
 
 const AddTreeBtn = () => {
-  const navigate = useNavigate(); // 使用 useNavigate 钩子
+  const navigate = useNavigate(); 
 
   const handleClick = () => {
-    navigate('/add-tree'); // 导航到 /add-tree 路径
+    navigate('/add-tree'); 
   };
 
   return (
     <Button
-      onClick={handleClick} // 添加点击事件处理函数
+      onClick={handleClick} 
       shape="circle"
       type="primary"
       style={{
