@@ -21,6 +21,7 @@ const AddTreeBtn = () => {
         bottom: 60,
         width: 90,
         height: 90,
+        zIndex:9999999999999,
       }}
     >
       <img src={yourImage} alt="Icon" style={{ width: '100%', height: '100%', marginTop: -10 }} />
