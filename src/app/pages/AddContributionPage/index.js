@@ -50,7 +50,7 @@ const AddContributionPage = () => {
           <StepIndicator currentStep={currentStep} />
           {currentStep === 1 && <TreeInfoForm onSubmit={handleTreeInfoSubmit} />}
           {currentStep === 2 && <PhotoUploadForm onPhotoUploadComplete={handleNextStep} />}
-          {currentStep === 3 && <NoteForm onNext={handleNoteSubmit} />}
+          {currentStep === 3 && <NoteForm onSubmit={handleNoteSubmit} />}
         </div>
       </div>
       <AddTreeBtn />
