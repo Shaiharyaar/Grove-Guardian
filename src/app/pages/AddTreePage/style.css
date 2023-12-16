@@ -1,6 +1,8 @@
 .contributionSec{
     background-image: url(../../../images/contributionBg-min.jpg);
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 4%;
     background-size: cover;
     background-position: center center;
 }
@@ -31,7 +33,9 @@
 }
 .contriForm{
     width: 54%;
-    height: 80vh;
+    min-height: 76vh;
+    height: auto;
+    padding-bottom: 3%;
     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 14px 60px 14px 14px;
 }
@@ -145,8 +149,8 @@ textarea:where(.css-3fxhx0).ant-input {
 :where(.css-dev-only-do-not-override-3fxhx0).ant-form-item {
     margin-bottom: 12px;
 }
-:where(.css-dev-only-do-not-override-3fxhx0).ant-form-item .ant-form-item-label {
-    width: 35%;
+:where(.css-dev-only-do-not-override-3fxhx0).ant-form-vertical .ant-form-item-label{
+    padding: 0 0 3px;
 }
 .uploadLabel{
     width:100%;

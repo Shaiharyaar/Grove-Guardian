@@ -1,3 +1,12 @@
-.main-header {
-  
+.headerLogo{
+    height: 70%;
+    margin-right: auto;
+}
+.menuBtn1,.menuBtn2,.menuBtn3,.menuBtn4,.menuBtn5,.menuBtn6{
+    transition: .5s ease;
+}
+.menuBtn1:hover,.menuBtn2:hover,.menuBtn3:hover,.menuBtn4:hover,.menuBtn5:hover,.menuBtn6:hover{
+    color: #6A994E;
+    font-weight: 800;
+    transition: .5s ease;
 }

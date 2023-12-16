@@ -1,36 +1,15 @@
-import React, { useState } from 'react';
-import {
-  Button,
-  Cascader,
-  Checkbox,
-  ColorPicker,
-  DatePicker,
-  Form,
-  Input,
-  InputNumber,
-  Radio,
-  Select,
-  Slider,
-  Switch,
-  TreeSelect,
-  Upload,
-} from 'antd';
-
+import React from 'react';
+import { Form, Select, DatePicker, InputNumber, Button } from 'antd';
 
 const TreeInfoForm = ({ onSubmit }) => {
-  const [treeInfo, setTreeInfo] = useState({
-    country: '',
-    plantingDate: '',
-    species: '',
-    quantity: 1,
-  });
 
-  const handleChange = (e) => {
-    setTreeInfo({ ...treeInfo, [e.target.name]: e.target.value });
+  const onFinish = (values) => {
+    console.log('Success:', values);
+    onSubmit(values); // 调用传递进来的 onSubmit 函数
   };
 
-  const handleQuantityChange = (amount) => {
-    setTreeInfo({ ...treeInfo, quantity: Math.max(1, treeInfo.quantity + amount) });
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
   };
 
   return (
@@ -38,11 +17,21 @@ const TreeInfoForm = ({ onSubmit }) => {
       <div className="stepImg stepImg1"></div>
       <h2 className="stepTitle">Planting Basic Information</h2>
       <p className="stepIntro">Please select the planting country, choose the variety (if there are different varieties, you can fill them out in batches), and select or enter the quantity of trees to be planted.</p>
-      <form className="contriFormContent" onSubmit={() => onSubmit(treeInfo)}>
-        
-        <Form.Item label="Planting Country ">
-        <Select placeholder="Select a country">
-            <Select.Option value="afghanistan">Afghanistan</Select.Option>
+      
+      <Form
+        name="treeInfoForm"
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        layout="vertical"
+        className="contriFormContent"
+      >
+        <Form.Item 
+          name="country"
+          label="Planting Country"
+          rules={[{ required: true, message: 'Please select a country!' }]}
+        >
+          <Select placeholder="Select a country">
+                        <Select.Option value="afghanistan">Afghanistan</Select.Option>
             <Select.Option value="albania">Albania</Select.Option>
             <Select.Option value="algeria">Algeria</Select.Option>
             <Select.Option value="andorra">Andorra</Select.Option>
@@ -238,19 +227,22 @@ const TreeInfoForm = ({ onSubmit }) => {
             <Select.Option value="yemen">Yemen</Select.Option>
             <Select.Option value="zambia">Zambia</Select.Option>
             <Select.Option value="zimbabwe">Zimbabwe</Select.Option>
-
           </Select>
         </Form.Item>  
- 
-          
 
-          {/* <p className="inputName">Planting Date : </p>  */}
-          <Form.Item label="Planting Date">
+        <Form.Item 
+          name="plantingDate"
+          label="Planting Date"
+          rules={[{ required: true, message: 'Please select a planting date!' }]}
+        >
           <DatePicker />
         </Form.Item>
         
-        
-        <Form.Item label="Species">
+        <Form.Item 
+          name="species"
+          label="Species"
+          rules={[{ required: true, message: 'Please select a specie!' }]}
+        >
           <Select placeholder="Select a specie">
             <Select.Option value="Others">Others</Select.Option>
             <Select.Option value="acacia">Acacia</Select.Option>
@@ -300,20 +292,23 @@ const TreeInfoForm = ({ onSubmit }) => {
             <Select.Option value="willow">Willow</Select.Option>
             <Select.Option value="yew">Yew</Select.Option>
           </Select>
-        </Form.Item>  
-        
-        
-        <Form.Item label="Tree Number">
-          <InputNumber />
+        </Form.Item>
+
+        <Form.Item 
+          name="quantity"
+          label="Tree Number"
+          rules={[{ required: true, message: 'Please input the number of trees!' }]}
+        >
+          <InputNumber min={1} />
         </Form.Item>
         
-        {/* <button className="selectionSubmit" type="submit">Next Step</button> */}
         <Form.Item wrapperCol={{ xs: { span: 24, offset: 0 }, sm: { span: 16, offset: 8 } }}>
         <Button className="selectionSubmit" type="primary" htmlType="submit">
           Next Step
         </Button>
       </Form.Item>
-      </form>
+
+      </Form>
     </>
   );
 };
