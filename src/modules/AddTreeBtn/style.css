@@ -12,7 +12,7 @@
     bottom: 60px;
     width: 90px;
     height: 90px;
-    z-index:9999999999999,
+    z-index:9999999999999;
 }
 
 @media screen and (max-width: 767px) {
