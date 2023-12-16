@@ -2,6 +2,7 @@ import { EnvironmentOutlined, UserOutlined } from '@ant-design/icons'
 import { Avatar, Card, List, Pagination, Space, Typography } from 'antd'
 import React, { useState } from 'react'
 import './index.css'
+import AddTreeBtn from '../../../modules/AddTreeBtn'
 import image1 from '../../../../src/images/1.jpg';
 import image2 from '../../../../src/images/2.jpg';
 import image3 from '../../../../src/images/3.jpg';
@@ -319,6 +320,9 @@ const ContributionsPage = () => {
           total={contributors.length}
         />
       </Card>
+    </div>
+    <div>
+      <AddTreeBtn />
     </div>
   )
 }
