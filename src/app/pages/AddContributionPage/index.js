@@ -1,11 +1,12 @@
 
-import { Typography } from 'antd';
 import React, { useState } from 'react';
-import AddTreeBtn from '../../../modules/AddTreeBtn';
-import NoteForm from '../../../modules/NoteForm';
-import PhotoUploadForm from '../../../modules/PhotoUploadForm';
+import { Typography } from 'antd'
+import Header from '../../../modules/common/Header';
 import StepIndicator from '../../../modules/StepIndicator';
 import TreeInfoForm from '../../../modules/TreeInfoForm';
+import PhotoUploadForm from '../../../modules/PhotoUploadForm';
+import NoteForm from '../../../modules/NoteForm';
+import AddTreeBtn from '../../../modules/AddTreeBtn';
 import './style.css';
 
 
