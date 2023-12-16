@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Typography, Steps, Flex, Card, Button, Icon} from 'antd';
-
+import Header from '../../../modules/common/Header';
 import './index.css';
 import customIcon1 from './icon1.png';
 import customIcon2 from './icon2.png';
@@ -101,7 +101,7 @@ const StatisticsPage = () => {
   return (
     <>
 
-    <Header />
+
 
     <div className="statistic-page">
       
