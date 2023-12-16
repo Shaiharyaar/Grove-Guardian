@@ -40,6 +40,7 @@ const AddContributionPage = () => {
 
   return (
     <div className="contributionSec">
+      {/* <Header /> */}
       <div className="container">
 
         <div className="introContri">
