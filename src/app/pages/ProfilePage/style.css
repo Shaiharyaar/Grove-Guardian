@@ -112,6 +112,12 @@
   width: 100%;
   padding: 0 0 0 10px;
 }
+.profile-info-wrapper .info-container .card textarea {
+  width: 100%;
+}
+.profile-info-wrapper .bio-container .card textarea {
+  width: 100%;
+}
 
 @media only screen and (max-width: 1100px) {
   .profile-info-wrapper .image-container {
