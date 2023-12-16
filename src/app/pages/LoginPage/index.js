@@ -96,7 +96,7 @@ const LoginPage = () => {
             <Input
               status={emailStatus}
               value={email}
-              placeholder='Enter your email'
+              placeholder='Enter your email (example@email.com)'
               onChange={onEmailChange}
               size={'large'}
               onBlur={onEmailBlur}
