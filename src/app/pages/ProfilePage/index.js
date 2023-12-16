@@ -138,7 +138,6 @@ const ProfilePage = () => {
                   tooltip: 'Edit first name',
                   onChange: (e) => (firstNameRef.current = e),
                   onEnd: handleFirstName,
-                  editing:true
                 }}
                 level={5}
               >
