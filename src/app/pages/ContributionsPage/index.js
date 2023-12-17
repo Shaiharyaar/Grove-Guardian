@@ -1,5 +1,5 @@
 import { EnvironmentOutlined, UserOutlined } from '@ant-design/icons'
-import { Avatar, Card, List, Pagination, Space, Typography } from 'antd'
+import { Avatar, Card, List, Pagination, Space, Typography, Image } from 'antd'
 import React, { useState } from 'react'
 import './index.css'
 import AddTreeBtn from '../../../modules/AddTreeBtn'
@@ -295,8 +295,8 @@ const ContributionsPage = () => {
           renderItem={(contributor) => (
             <List.Item>
               <List.Item.Meta
-                //avatar={<Avatar icon={<UserOutlined />} />}
-                avatar={<Avatar src={contributor.avatar}/>}
+                avatar={<Avatar icon={<UserOutlined />} />}
+                //avatar={<Avatar src={contributor.avatar}/>}
                 title={contributor.name}
                 description={
                   <>
@@ -308,6 +308,13 @@ const ContributionsPage = () => {
                   <div>{contributor.bio}</div>
                   </>
                 }
+              />
+              <Image
+                 width={90}
+                 height={90}
+                 src={contributor.avatar}
+                 style={{ marginLeft: 'auto' }} 
+                 alt="Plant preview"
               />
             </List.Item>
           )}
