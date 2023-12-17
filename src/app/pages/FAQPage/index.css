@@ -39,6 +39,7 @@ body, html {
 
   }
   
+  /* Style the buttons that are used to open and close the accordion panel */
   .accordion {
     background-color:#F1F2EE;
     color: #133A37;
@@ -60,13 +61,14 @@ body, html {
     text-overflow: ellipsis; 
     min-width: 50%;
   }
-
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .accordion:hover {
     background-color: #f5f5f5;
     border-top: 2px solid black;
   }
   
-
+  /* Style the accordion panel. Note: hidden by default */
   .panel {
     text-align: left;
     padding: 0 20px;
@@ -78,9 +80,8 @@ body, html {
     width: calc(100% - 400px);
     box-sizing: border-box;
     font-size: 1.2em;
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    white-space: normal; /* Allow text to wrap */
+    text-overflow: clip;
     min-width: 50%;
   }
   .accordion:after {
@@ -103,6 +104,9 @@ body, html {
     }
     .panel {
       margin: auto;
+      white-space: nowrap; 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
     }
     .active, .accordion:hover {
       background-color: #f5f5f5;
