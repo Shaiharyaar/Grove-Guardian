@@ -320,8 +320,6 @@ const ContributionsPage = () => {
           total={contributors.length}
         />
       </Card>
-    </div>
-    <div>
       <AddTreeBtn />
     </div>
   )
