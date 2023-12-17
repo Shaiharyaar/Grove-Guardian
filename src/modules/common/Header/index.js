@@ -21,6 +21,7 @@ export default function Header() {
       }}
     >
       <img 
+        style={{paddingLeft: 100}}
         className={'headerLogo'}
         src={logoImage} 
         alt="Logo" 
@@ -76,7 +77,6 @@ export default function Header() {
           fontSize: 16,
           textDecoration: path === '/login' ? 'green wavy underline' : '',
           fontWeight: 500,
-          marginRight: 100,
         }}
         href='/login'
       >
@@ -88,7 +88,7 @@ export default function Header() {
           fontSize: 16,
           textDecoration: path === '/faq' ? 'green wavy underline' : '',
           fontWeight: 500,
-          marginRight: 100,
+          paddingRight: 100,
         }}
         href='/faq'
       >
